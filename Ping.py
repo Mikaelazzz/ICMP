@@ -5,6 +5,7 @@ import struct
 import time
 import select
 import threading
+import signal
 
 ICMP_ECHO_REQUEST = 8
 
@@ -54,6 +55,11 @@ def receiveOnePing(mySocket, ID, timeout, destAddr):
         timeLeft = timeLeft - howLongInSelect
         if timeLeft <= 0:
             return "Request timed out."
+
+def signout(sig, frame):
+    
+    print("\nProgram Exit..")
+    sys.exit(0)
 
 def sendOnePing(mySocket, destAddr, ID):
     myChecksum = 0
@@ -106,6 +112,8 @@ def ping(host, timeout=1):
 #         time.sleep(1)
 
 # tcp_loop = threading.Thread(target=tcp_ping, args=("192.168.5.83", 8082))
+
+signal.signal(signal.SIGINT,signout)
 ping_loop = threading.Thread(target=ping, args=("google.com",))
 
 # tcp_loop.start()
