@@ -15,6 +15,7 @@ untuk mengganti `SERVER ICMP`
 - ganti `SERVER ICMP` dari ("example.com")
 
 =============================================================
+
 untuk Proses `Loop` dari fungsi nya 
 
 def ping(host, timeout=1):
