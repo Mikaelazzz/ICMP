@@ -33,7 +33,7 @@ Pastikan untuk menggunakan `ALAMAT DOMAIN` atau `ALAMAT IP` yang valid.
 Program ini berfungsi untuk mengirimkan paket Ping secara berulang ulang ke server yang telah ditentukan.
 
 `FUNGSI PING`
-`python
+```python
 def ping(host, timeout=1):
     dest = gethostbyname(host) 
     print("Pinging " + dest + " using Python:")
@@ -43,7 +43,7 @@ def ping(host, timeout=1):
         delay = doOnePing(dest, timeout)
         print("Ping " + host)
         print(f"Reply from {dest}: time = {delay*1000:.0f} ms\n " if isinstance(delay, float) else delay)
-        time.sleep(1)`
+        time.sleep(1)```
 
 Penjelasan :
 
@@ -62,8 +62,8 @@ Penjelasan :
 `Menhentikan Program`
 Untuk menghentikan program saat sedang berjalan, Pengguna dapat menekan Ctrl + C di terminal. Ini akan memicu sinyal interrupt (SIGINT) dan memanggil fungsi signout, yang akan mencetak pesan keluar dan menghentikan program.
 
-`python
+```python
 def signout(sig, frame):
     print("\nProgram Exit..")
     sys.exit(0)
-`
+```
