@@ -43,7 +43,8 @@ def ping(host, timeout=1):
         delay = doOnePing(dest, timeout)
         print("Ping " + host)
         print(f"Reply from {dest}: time = {delay*1000:.0f} ms\n " if isinstance(delay, float) else delay)
-        time.sleep(1)```
+        time.sleep(1)
+```
 
 Penjelasan :
 
